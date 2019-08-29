@@ -27,7 +27,7 @@ final class ICOValidator
         6 => 2,
     ];
 
-    public static function validate(string $value): int
+    public function validate(string $value): int
     {
         // clean input
         $value = preg_replace('/\s+/', '', $value);

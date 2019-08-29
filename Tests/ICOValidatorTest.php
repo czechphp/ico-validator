@@ -14,7 +14,9 @@ class ICOValidatorTest extends TestCase
      */
     public function testValid(string $value)
     {
-        $this->assertSame(ICOValidator::ERROR_NONE, ICOValidator::validate($value));
+        $validator = new ICOValidator();
+
+        $this->assertSame(ICOValidator::ERROR_NONE, $validator->validate($value));
     }
 
     /**
@@ -38,16 +40,22 @@ class ICOValidatorTest extends TestCase
 
     public function testTooLong()
     {
-        $this->assertSame(ICOValidator::ERROR_FORMAT, ICOValidator::validate('12345678901'));
+        $validator = new ICOValidator();
+
+        $this->assertSame(ICOValidator::ERROR_FORMAT, $validator->validate('12345678901'));
     }
 
     public function testInvalidCharacter()
     {
-        $this->assertSame(ICOValidator::ERROR_FORMAT, ICOValidator::validate('foo'));
+        $validator = new ICOValidator();
+
+        $this->assertSame(ICOValidator::ERROR_FORMAT, $validator->validate('foo'));
     }
 
     public function testModulo()
     {
-        $this->assertSame(ICOValidator::ERROR_MODULO, ICOValidator::validate('00000005'));
+        $validator = new ICOValidator();
+
+        $this->assertSame(ICOValidator::ERROR_MODULO, $validator->validate('00000005'));
     }
 }
