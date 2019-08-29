@@ -21,7 +21,7 @@ $ composer require czechphp/ico-validator
 use Czechphp\ICOValidator\ICOValidator;
 
 $validator = new ICOValidator();
-$violation = $validator->validate('401224/001');
+$violation = $validator->validate('25596641');
 
 if ($violation === ICOValidator::ERROR_NONE) {
     // valid
