@@ -17,15 +17,6 @@ final class ICOValidator
     public const ERROR_NONE = 0;
     public const ERROR_FORMAT = 1;
     public const ERROR_MODULO = 2;
-    private const WEIGHTS = [
-        0 => 8,
-        1 => 7,
-        2 => 6,
-        3 => 5,
-        4 => 4,
-        5 => 3,
-        6 => 2,
-    ];
 
     public function validate(string $value): int
     {
@@ -39,8 +30,8 @@ final class ICOValidator
         $chars = str_split($value);
         $sum = 0;
 
-        for ($i = 0; $i < 7; $i++) {
-            $sum += $chars[$i] * self::WEIGHTS[$i];
+        for ($i = 0, $w = 8; $i < 7; $i++, $w--) {
+            $sum += $chars[$i] * $w;
         }
 
         $modulo = $sum % 11;
