@@ -8,8 +8,7 @@
         "Czech republic",
         "Czechia",
         "IČO",
-        "Identifikační číslo osoby",
-        "ČR"
+        "Identifikační číslo osoby"
     ],
     "license": "MIT",
     "require": {
@@ -27,7 +26,10 @@
     "autoload": {
         "psr-4": {
             "Czechphp\\ICOValidator\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "Tests"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
