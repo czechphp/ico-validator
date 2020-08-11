@@ -35,10 +35,5 @@
         "psr-4": {
             "Czechphp\\ICOValidator\\Tests\\": "Tests/"
         }
-    },
-    "scripts": {
-        "test": [
-            "phpunit"
-        ]
     }
 }
